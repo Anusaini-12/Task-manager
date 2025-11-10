@@ -16,7 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: "*",
+    origin: "https://task-manager-a3sq.vercel.app",
     credentials: true,
 }));
 app.use(express.json());
