@@ -17,10 +17,11 @@ const Login = ({ setUser }) => {
         })
     };
 
+    const API_URL = import.meta.env.VITE_API_URL;
     const handleSubmit = async (e) => {
        e.preventDefault(); 
        try {
-          const res = await axios.post("http://localhost:8080/api/user/login",formData, 
+          const res = await axios.post`${API_URL}/login`,formData, 
             { 
                 headers: { "Content-Type": "application/json" } 
             });
