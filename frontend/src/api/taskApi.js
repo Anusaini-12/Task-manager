@@ -3,7 +3,7 @@ import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const fetchTask = async ( token) => {
-    const res = await axios.get(API_URL, {
+    const res = await axios.get(`${API_URL}/api/tasks`, {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
@@ -12,7 +12,7 @@ export const fetchTask = async ( token) => {
 };
 
 export const createTask = async (taskData, token) => {
-    const res = await axios.post(API_URL, taskData, {
+    const res = await axios.post(`${API_URL}/api/tasks`, taskData, {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
@@ -21,7 +21,7 @@ export const createTask = async (taskData, token) => {
 };
 
 export const updateTask = async (id, updateData, token) => {
-    const res = await axios.put(`${API_URL}/${id}`, updateData, {
+    const res = await axios.put(`${API_URL}/api/tasks/${id}`, updateData, {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
@@ -30,7 +30,7 @@ export const updateTask = async (id, updateData, token) => {
 };
 
 export const deleteTask = async (id, token) => {
-    const res = await axios.delete(`${API_URL}/${id}`, {
+    const res = await axios.delete(`${API_URL}/api/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
@@ -39,7 +39,7 @@ export const deleteTask = async (id, token) => {
 };
 
 export const clearAllTasks = async (token) => {
-    const res = await axios.delete(API_URL, {
+    const res = await axios.delete(`${API_URL}/api/tasks`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
