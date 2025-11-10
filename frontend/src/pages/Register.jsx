@@ -18,11 +18,11 @@ const Register = () => {
            [e.target.name]: e.target.value,
         }))
     };
-
+    const API_URL = import.meta.env.VITE_API_URL;
     const handleSubmit = async (e) => {
        e.preventDefault(); 
        try {
-         await axios.post("http://localhost:8080/api/user/register", formData, 
+         await axios.post(`${API_URL}/api/user/register`, formData, 
          {
             headers: { "Content-Type": "application/json" },
          });
