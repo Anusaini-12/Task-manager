@@ -6,11 +6,7 @@ const Header = () => {
 
   const [user, setUser] = useState("");
   const navigate = useNavigate();
-<<<<<<< HEAD
   
-=======
-
->>>>>>> 8bbeaacec13442ce7380a0203e4dddd9f7bfb8ba
   const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
         const fetchUser = async(token) => {
