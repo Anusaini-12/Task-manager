@@ -11,13 +11,14 @@ const TaskForm = ({ onTaskAdded }) => {
       [e.target.name]: e.target.value,
     }));
   };
-
+  
+  const API_URL = import.meta.env.VITE_API_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:8080/api/tasks",
+        `${API_URL}/api/tasks`,
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
