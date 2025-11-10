@@ -62,7 +62,6 @@ export const loginUser = expressAsyncHandler(async (req, res) => {
         res.status(400);
         throw new Error("Invalid Credentials!");
     }
-    res.json({message: "Login User"});
 });
 
 //Get Me
